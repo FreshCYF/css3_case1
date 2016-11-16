@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 手机端需要加上的meta -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*万能清除浮动*/
+        .clearfix:after,.clearfix:before{
+            content:"";
+            display:block;
+
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+
+        ul,ul li{
+            list-style:none;
+        }
+
+        a{
+            text-decoration：none;
+        }
+        img{
+            display:block;
+            bottom: 0;
+        }
+
+        .img-box{
+            width: 882px;
+            margin: 100px auto;
+            height: 86px;
+            border:10px dashed cyan;
+            overflow: hidden;
+            position: relative;
+        }
+        .img-box .list{
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 1764px;
+            height: 86px;
+            animation:move 5s linear infinite;
+        }
+
+        .list:hover{
+            animation-play-state:paused
+        }
+        .img-box .list li{
+            float: left;
+            width: 126px;
+            height: 86px;
+        }
+
+        @-webkit-keyframes move{
+           0%{left:0}
+           100%{left: -882px}
+        }
+    </style>
+</head>
+<body>
+    <div class="img-box">
+        <ul class="list clearfix">
+            <li class="item"><img src="images/1.jpg" alt=""></li>
+            <li class="item"><img src="images/2.jpg" alt=""></li>
+            <li class="item"><img src="images/3.jpg" alt=""></li>
+            <li class="item"><img src="images/4.jpg" alt=""></li>
+            <li class="item"><img src="images/5.jpg" alt=""></li>
+            <li class="item"><img src="images/6.jpg" alt=""></li>
+            <li class="item"><img src="images/7.jpg" alt=""></li>
+            <li class="item"><img src="images/1.jpg" alt=""></li>
+            <li class="item"><img src="images/2.jpg" alt=""></li>
+            <li class="item"><img src="images/3.jpg" alt=""></li>
+            <li class="item"><img src="images/4.jpg" alt=""></li>
+            <li class="item"><img src="images/5.jpg" alt=""></li>
+            <li class="item"><img src="images/6.jpg" alt=""></li>
+            <li class="item"><img src="images/7.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

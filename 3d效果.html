@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 手机端需要加上的meta -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <style type="text/css">
+
+         /** 清除内外边距 **/
+        body,h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+        pre, /* text formatting elements 文本格式元素 */
+        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+        th, td /* table elements 表格元素 */ {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body{
+            font-size:12px;
+        }
+
+        /*万能清除浮动*/
+        .clearfix:after,.clearfix:before{
+            content:"";
+            display:block;
+
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+
+        ul,ul li{
+            list-style:none;
+        }
+
+        a{
+            text-decoration：none;
+        }
+        img{
+            display:block;
+        }
+
+        .box{
+            /* 视距 */
+             perspective:800px;
+            /*定义观察角度 一般为 center 或 50% 50%,意为居中*/
+            preserve-origin:50% 50%;
+        }
+        .box .group{
+
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+            /*给3d的效果*/
+            transform-style:preserve-3d;
+            animation:move 2s ease infinite;
+
+        }
+        .group .pane{
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            height: 200px;
+            width: 200px;
+            font-size: 120px;
+            line-height: 200px;
+            background: rgba(0,0,0,.2);
+        }
+        .pane2{
+            transform:rotateX(-90deg);
+             /* 变换基点*/
+             transform-origin:top;
+        }
+        .pane4{
+            transform:rotateX(90deg);
+             /* 变换基点*/
+             transform-origin:bottom;
+        }
+        .pane6{
+            transform:translateZ(-200px);
+        }
+        .pane3{
+            transform:rotateY(90deg);
+            transform-origin:left;
+        }
+        .pane5{
+            transform:rotateY(-90deg);
+            transform-origin:right;
+        }
+
+        @-webkit-keyframes move{
+            0%{transform:rotateX(0) rotateY(0)}
+            50%{transform:rotateX(360deg) rotateY(0deg)}
+            100%{transform:rotateX(360deg) rotateY(360deg)}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="group">
+            <div class="pane pane1">1</div>
+            <div class="pane pane2">2</div>
+            <div class="pane pane3">3</div>
+            <div class="pane pane4">4</div>
+            <div class="pane pane5">5</div>
+            <div class="pane pane6">6</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 手机端需要加上的meta -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        img{
+
+            display: block;
+            border: 0;
+        }
+        a{
+            text-decoration: none;
+            font-size: 12px;
+
+        }
+        ul,ul li{
+            text-decoration: none;
+        }
+
+        .img-box{
+            width: 300px;
+            height:300px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .img-box .item{
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .img-box .before{
+            background: url(images/musict.jpg);
+        }
+        .img-box .after{
+            background: url(images/musicb.jpg);
+            transform-origin:bottom center;
+            transition:all 1s linear;
+        }
+
+        /*.img-box:hover .after{
+            transform:rotateX(180deg);
+            transition:all 0.5s linear;
+        }*/
+    </style>
+</head>
+<body>
+   <div class="img-box" id="img-box">
+       <div class="item before"></div>
+       <div class="item after" id="after"></div>
+   </div>
+    <audio src="1.mp3" id="audio"></audio>
+   <script type="text/javascript">
+        var imgBox=document.getElementById("img-box");
+        var after=document.getElementById("after");
+        var audio=document.getElementById("audio");
+        //加锁，来控制音乐盒开关
+        var flag=true;
+        imgBox.onclick=function(){
+            if(flag){
+                after.style.transform="rotateX(180deg)";
+                after.style.transition="all 0.5s linear";
+                audio.play();
+                flag=false;
+            }else{
+                after.style.transform="rotateX(0deg)";
+                audio.pause();
+                flag=true;
+            }
+
+
+        }
+
+
+   </script>
+</body>
+</html>

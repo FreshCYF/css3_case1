@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 手机端需要加上的meta -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <style type="text/css">
+       /** 清除内外边距 **/
+        body,h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+        pre, /* text formatting elements 文本格式元素 */
+        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+        th, td /* table elements 表格元素 */ {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body{
+            font-size:12px;
+        }
+
+        /*万能清除浮动*/
+        .clearfix:after,.clearfix:before{
+            content:"";
+            display:block;
+
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+
+        ul,ul li{
+            list-style:none;
+        }
+
+        a{
+            text-decoration：none;
+        }
+        img{
+            display:block;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

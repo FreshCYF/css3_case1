@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 手机端需要加上的meta -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <style type="text/css">
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            font-size:12px;
+        }
+
+        /*万能清除浮动*/
+        .clearfix:after,.clearfix:before{
+            content:"";
+            display:block;
+
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+
+        ul,ul li{
+            list-style:none;
+        }
+
+        a{
+            text-decoration：none;
+        }
+        img{
+            display:block;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .imgbox{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .imgbox li{
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .imgbox li:nth-child(1){
+            background: url(images/bg1.jpg);
+            /*背景不平铺*/
+            background-size: cover;
+            z-index: 3;
+        }
+        .imgbox li:nth-child(2){
+            background: url(images/bg2.jpg);
+            /*背景不平铺*/
+            background-size: cover;
+            z-index: 2;
+
+        }
+        .imgbox li:nth-child(3){
+            background: url(images/bg3.jpg);
+            /*背景不平铺*/
+            background-size: cover;
+            z-index: 1;
+
+        }
+        /*使用了锚标记*/
+        #img1:target{
+            z-index: 3;
+            animation:move 2s linear;
+        }
+
+        #img2:target{
+            z-index: 3;
+            animation:move 2s linear;
+        }
+
+        #img3:target{
+            z-index: 3;
+            animation:move 2s linear;
+        }
+
+        .handle{
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            bottom: 50px;
+            z-index: 10;
+            text-align: center;
+        }
+        .handle li{
+            display: inline-block;
+        }
+        .handle li a{
+            text-decoration: none;
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            font-size: 40px;
+            line-height: 100px;
+            background: pink;
+            text-align: center;
+            color: #000;
+        }
+
+        @-webkit-keyframes move{
+            0%{
+                transform:translate(-100%);
+            }
+            100%{
+                transform:translate(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="imgbox">
+        <li id="img1"></li>
+        <li id="img2"></li>
+        <li id="img3"></li>
+    </ul>
+
+    <ul class="handle">
+        <li><a href="#img1">1</a></li>
+        <li><a href="#img2">2</a></li>
+        <li><a href="#img3">3</a></li>
+    </ul>
+
+</body>
+</html>
